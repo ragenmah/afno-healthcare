@@ -13,8 +13,8 @@ const HomeScreen = () => {
       <SearchComponent />
       <Appointment />
       <Slogan />
-      <Categories />
       <BookAndConsult />
+      <Categories />
     </CommonScreen>
   );
 };

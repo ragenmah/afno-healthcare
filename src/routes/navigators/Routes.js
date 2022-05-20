@@ -13,7 +13,7 @@ import {
   TouchableNativeFeedback,
   Pressable,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
+import FeatherIcon from 'react-native-vector-icons/Feather';
 import imagePath from '../../constants/imagePath';
 import appColors from '../../constants/appColors';
 const Drawer = createDrawerNavigator();
@@ -31,16 +31,15 @@ function Routes() {
           marginTop: 56,
           marginBottom: 55,
           backgroundColor: '#F9F9F9',
-          width: '58%',
+          width: '75%',
         },
         swipeEdgeWidth: 0,
-        drawerPosition: 'right',
+        // drawerPosition: 'right',
         overlayColor: 'transparent',
         headerLeft: () => (
           <TouchableOpacity
             onPress={() => navigation.toggleDrawer()}
             style={styles.headerLeft}>
-            {/* <Icon name="menu" size={25} color="#292D32" /> */}
             <Image source={imagePath.icHome} style={styles.logo} />
           </TouchableOpacity>
         ),
@@ -60,14 +59,20 @@ function Routes() {
             </Text>
           ),
           headerRight: () => (
-            // <View style={styles.headerRight}>
-            //   <TouchableNativeFeedback onPress={() => {}}>
-            //     <View style={styles.roundCard}>
-            //       <Text style={styles.graphValue}>92%</Text>
-            //     </View>
-            //   </TouchableNativeFeedback>
-            // </View>
-            <View></View>
+            <View style={styles.headerRight}>
+              <TouchableNativeFeedback onPress={() => {}}>
+                <View
+                  style={[
+                    styles.roundCard,
+                    {
+                      color: appColors.primary2,
+                      backgroundColor: appColors.primary2,
+                    },
+                  ]}>
+                  <FeatherIcon name="users" size={20} color="#292D32" />
+                </View>
+              </TouchableNativeFeedback>
+            </View>
           ),
         }}
       />
@@ -128,7 +133,7 @@ const styles = StyleSheet.create({
     borderRadius: 100,
     width: 36,
     height: 36,
-    backgroundColor: '#F4E0FB',
+    // backgroundColor: '#F4E0FB',
     marginLeft: 50,
     justifyContent: 'center',
     alignItems: 'center',
